@@ -1,12 +1,15 @@
-Selective: a styleable replacement for <select>
+Selective: a styleable replacement for select
 ==============
 Usage
 --------------
 Add link to JS file:
+
 	<script src="js/jquery.selective.js"></script>
 Add link to CSS file:
+
 	<link rel="stylesheet" href="css/jquery.selective.css">
 To initialize:
+
 	//default settings
 	$('select').selective();
 	
