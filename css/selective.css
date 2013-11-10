@@ -1,0 +1,32 @@
+.selective {
+	position: relative;
+	font-size: 18px;
+	height: 50px;
+	border: 1px solid;
+	display: inline-block;
+	cursor: pointer;
+	line-height: 50px;
+}
+
+.selected {
+	padding: 0 20px 0 20px;
+}
+
+.options {
+	display: none;
+	position: absolute;
+	border: 1px solid;
+}
+
+.option {
+	position: relative;
+	line-height: 50px;
+	height: 50px;
+	padding: 0 20px 0 20px;
+	background: #ffffff;
+	z-index: 2;
+}
+
+.option:hover {
+	background: #cacaca;
+}
