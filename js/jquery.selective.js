@@ -6,9 +6,11 @@
 		{	
 			var data = {};
 			if($(this).data('speed')) { data.speed = $(this).data('speed'); };
+			if($(this).data('width')) { data.width = $(this).data('width'); };
 	  		
 	  		var def = $.extend( {
-		      	'speed' : 100
+		      	'speed' : 100,
+		      	'width' : 'auto'
 		    }, options, data);
 	    
 	  		var _select = $(this);			
@@ -33,9 +35,11 @@
 			var selected_str = $(_select).find('option[value=' + selected_val + ']').html();
 			var selected = '<div class="selected">' + selected_str + '</div>';
 			var selectVal = '<div class="selective">' + selected + '<div class="options">' + options + '</div></div>';
-			$(_select).parent().append(selectVal);			
+			$(_wrap).append(selectVal);
+			$(_wrap).find('.selective').css('width', def.width);
+			$(_wrap).find('.options').css('width', def.width);
+						
       		var count = 0;
-      		
 			$(_wrap).on('click', '.selected', function(event){
 				if(count == 0) {
 					$(_wrap).find('.options').slideDown(def.speed);
@@ -51,7 +55,7 @@
 				var valueid = $(this).data('id');
 				$(_select).val(valueid);
 				var optionVal = $(this).html();
-				$(_wrap).find('.selected').html(optionVal)
+				$(_wrap).find('.selected').html(optionVal);
 				$(_wrap).find('.options').slideUp(def.speed, function(){
 					optionlist = [];
 					getOptions();
@@ -59,6 +63,14 @@
 					$(this).html(options);
 				});
 				count = 0;
+			});
+			
+			$('html').click(function(e) {
+				if(!$(e.target).hasClass('selected') && !$(e.target).hasClass('option'))
+				{
+					$(_wrap).find('.options').slideUp(def.speed);
+			    	count = 0;
+				}
 			});
 		});
 	};

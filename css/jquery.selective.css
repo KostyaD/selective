@@ -1,3 +1,7 @@
+.selective-wrap {
+	display: inline-block;
+}
+
 .selective {
 	position: relative;
 	font-size: 18px;
@@ -8,21 +12,18 @@
 	line-height: 50px;
 }
 
-.selected {
-	padding: 0 20px 0 20px;
-}
-
 .options {
 	display: none;
 	position: absolute;
 	border: 1px solid;
+	left: -1px;
 }
 
 .option {
 	position: relative;
 	line-height: 50px;
 	height: 50px;
-	padding: 0 20px 0 20px;
+	width: 100%;
 	background: #ffffff;
 	z-index: 2;
 }

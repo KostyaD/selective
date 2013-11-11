@@ -22,3 +22,4 @@ Settings
 key | default | description
 ----|------|----
 speed | 100  | speed of animation
+width | auto | width of element
