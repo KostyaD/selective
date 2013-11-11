@@ -15,7 +15,7 @@
 			$(_select).wrap('<div class="selective-wrap" />');
 			var _wrap = $(_select).parent();
 			$(_select).hide();
-			var optionlist = new Array();
+			var optionlist = [];
 			var selected_val = $(_select).val();
 			
 			function getOptions() {
